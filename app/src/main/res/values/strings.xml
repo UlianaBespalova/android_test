@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Sirius</string>
+
+    <string name="application_title_mock">DoTA 2</string>
+    <string name="rating_counter_mock">70M</string>
 </resources>
