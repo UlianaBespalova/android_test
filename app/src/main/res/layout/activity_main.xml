@@ -1,129 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
-    tools:context=".MainActivity">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_main_image_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_logo_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.42" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
-
-
-    <ImageView
-        android:id="@+id/main_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/main_image"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideline_main_image_bottom"
-        />
-
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/logo_container"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@id/guideline_logo_top">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@color/background_color"
+        tools:context=".MainActivity"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
 
         <ImageView
-            android:id="@+id/logo_image"
-            android:layout_width="88dp"
-            android:layout_height="88dp"
+            android:id="@+id/main_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/main_image"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/main_image"
+            />
+
+        <View
+            android:id="@+id/top_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/shadow_background"
+            style="@style/Divider"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_back"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:focusable="true"
+            android:layout_marginTop="56dp"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            app:backgroundTint="@color/floating_button_color"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/app_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/sk_modernist"
-            android:text="@string/application_title_mock"
-            android:textColor="@color/text_color_primary"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/ratingBar_indicator"
-            app:layout_constraintStart_toEndOf="@id/logo_image"
-            app:layout_constraintVertical_chainStyle="packed"
-            tools:text="@string/application_title_mock" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_more"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:focusable="true"
+            android:layout_marginTop="56dp"
+            app:srcCompat="@drawable/ic_baseline_more_horiz_24"
+            app:backgroundTint="@color/floating_button_color"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <RatingBar
-            android:id="@+id/ratingBar_indicator"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/logo_container"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="10dp"
-            android:rating="5"
-            android:theme="@style/CustomRatingBar"
-            app:layout_constraintBottom_toBottomOf="@id/logo_container"
-            app:layout_constraintStart_toEndOf="@id/logo_image"
-            tools:ignore="MissingConstraints" />
+            android:layout_marginTop="-30dp"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/main_image">
+
+            <ImageView
+                android:id="@+id/logo_image"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/sk_modernist"
+                android:text="@string/application_title_mock"
+                android:textColor="@color/text_color_primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/ratingBar_indicator"
+                app:layout_constraintStart_toEndOf="@id/logo_image"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="@string/application_title_mock" />
+
+            <include
+                android:id="@+id/ratingBar_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/logo_container"
+                app:layout_constraintStart_toEndOf="@id/logo_image"
+                layout="@layout/rating_bar" />
+
+            <TextView
+                android:id="@+id/app_rating_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sk_modernist"
+                android:text="@string/rating_counter_mock"
+                android:textColor="@color/text_color_additional"
+                android:textSize="12sp"
+                android:layout_marginHorizontal="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ratingBar_indicator"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/ratingBar_indicator"
+                app:layout_constraintTop_toTopOf="@+id/ratingBar_indicator"
+                tools:text="@string/rating_counter_mock" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tag_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/logo_container"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            tools:listitem="@layout/tag_item"
+            />
 
         <TextView
-            android:id="@+id/app_rating_counter"
-            android:layout_width="wrap_content"
+            android:id="@+id/app_descriprion"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sk_modernist"
-            android:text="@string/rating_counter_mock"
+            android:text="@string/description_mock"
             android:textColor="@color/text_color_secondary"
             android:textSize="12sp"
-            android:layout_marginHorizontal="5dp"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_marginVertical="24dp"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintTop_toBottomOf="@id/tag_list"
+            tools:text="@string/description_mock"
+            />
 
-            app:layout_constraintBottom_toBottomOf="@+id/ratingBar_indicator"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toEndOf="@id/ratingBar_indicator"
-            app:layout_constraintTop_toTopOf="@+id/ratingBar_indicator"
-            tools:text="@string/rating_counter_mock" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/review_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintTop_toBottomOf="@id/app_descriprion"
+            >
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/review_rating_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/total_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sk_modernist"
+                    android:text="@string/rating_mock"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/rating_mock"
+                    />
+
+                <include
+                    android:id="@+id/ratingBar_indicator_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toTopOf="@id/review_rating_container"
+                    app:layout_constraintStart_toEndOf="@id/total_rating"
+                    layout="@layout/rating_bar" />
+
+                <TextView
+                    android:id="@+id/app_rating_counter_reviews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sk_modernist"
+                    android:text="@string/rating_counter_mock_reviews"
+                    android:textColor="@color/text_color_additional"
+                    android:textSize="12sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/review_rating_container"
+                    app:layout_constraintStart_toEndOf="@id/total_rating"
+                    tools:text="@string/rating_counter_mock_reviews" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/divider_line"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/review_rating_container"
+                style="@style/Divider" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reviews_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_line"
+                tools:listitem="@layout/review_item"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_download"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/download_button"
+            android:text="@string/download_button_text"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/sk_modernist"
+            android:textAllCaps="false"
+            android:paddingVertical="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintTop_toBottomOf="@id/review_container"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tag_list"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@id/guideline_left"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right"
-        app:layout_constraintTop_toBottomOf="@id/logo_container"
-        android:background="#238438"
-
-        />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

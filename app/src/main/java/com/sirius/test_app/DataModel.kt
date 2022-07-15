@@ -16,7 +16,7 @@ class DataModel(
         ReviewModel(
             userImage = "https://ibb.co/WcJMjSw",
             userName = "Auguste Conte",
-            date = "February 14, 2019",
+            date = "April 27, 2019",
             message = "“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”"
         ),
         ReviewModel(

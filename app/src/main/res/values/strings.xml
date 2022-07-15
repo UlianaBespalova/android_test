@@ -1,6 +1,25 @@
 <resources>
     <string name="app_name">Sirius</string>
+    <string name="download_button_text">Install</string>
+    <string name="reviews_title">Review &amp; Ratings</string>
 
     <string name="application_title_mock">DoTA 2</string>
     <string name="rating_counter_mock">70M</string>
+    <string name="tag_mock">MULTIPLAYER</string>
+    <string name="description_mock">Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of
+        five players compete to collectively destroy a large structure defended by the
+        opposing team known as the "Ancient", whilst defending their own.
+
+        Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of
+        five players compete to collectively destroy a large structure defended by the
+        opposing team known as the "Ancient", whilst defending their own.
+    </string>
+    <string name="rating_mock">4.9</string>
+    <string name="rating_counter_mock_reviews">70M Reviews</string>
+
+    <string name="profile_name_mock">Ivan Proba</string>
+    <string name="profile_date_mock">February 14, 2019</string>
+    <string name="profile_review_mock">Dota 2 is a multiplayer online battle arena (MOBA) game which
+        has two teams of five players compete to collectively destroy a large structure defended by
+        the opposing team known as the "Ancient", whilst defending their own.</string>
 </resources>
